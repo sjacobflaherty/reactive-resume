@@ -69,7 +69,7 @@ function RouteComponent() {
 	const handleDownload = useCallback(async () => {
 		if (!resume) return;
 		const { url } = await printResumeAsPDF({ id: resume.id });
-		downloadFromUrl(url, `resume-${resume.name}.pdf`);
+		downloadFromUrl(url, `${resume.name}.pdf`);
 	}, [resume, printResumeAsPDF]);
 
 	if (!isReady) return <LoadingScreen />;
